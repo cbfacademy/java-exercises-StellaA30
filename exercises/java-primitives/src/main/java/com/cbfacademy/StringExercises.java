@@ -4,12 +4,25 @@ public class StringExercises {
 
     public String fromCharacters(char[] characters) {
         // TODO - Write code that creates a String from the input array of characters
-        throw new RuntimeException("Not implemented");
+        String str = "";
+
+        for (char character:characters) {
+            str += character;
+        }
+        return str;
+//        throw new RuntimeException("Not implemented");
     }
 
     public Long howMany(String text, Character character) {
         // TODO - Write code to determine how many of the input ${character} are contained in the input ${text}
-        throw new RuntimeException("Not implemented");
+        Long count = 0L;
+        for (int i = 0; i < text.length(); i++) {
+            if(character==text.charAt(i)){
+                count++;
+            }
+        }
+        return count;
+//        throw new RuntimeException("Not implemented");
     }
 
     public Boolean isPalindrome(String word) {
