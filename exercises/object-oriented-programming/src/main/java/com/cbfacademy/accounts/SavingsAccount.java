@@ -4,24 +4,26 @@ public class SavingsAccount extends Account {
 
     private double interestRate;
 
-    public SavingsAccount( int accountNumber, double interestRate){
+    public SavingsAccount( int accountNumber){
         super(accountNumber);
-        this.interestRate = interestRate;
+        this.interestRate = 0.04;
     }
 
 
     // without overriding the deposit method
-    public void addInterest(double amount){
+    public double addInterest(double amount){
         double interest = amount * this.interestRate;
-        deposit(interest);
+        return interest;
     }
+
 
 // adding interest and amount to deposit using override deposit method
     @Override
     public void deposit(double amount){
         if (amount > 0) {
-            double amountAndInterest = amount + (amount * this.interestRate);
-            setBalance(getBalance() + amountAndInterest);
+            double updatedBalance = getBalance() + amount;
+            double accountInterest = addInterest(updatedBalance);
+            setBalance(updatedBalance + accountInterest);
         }
     }
 

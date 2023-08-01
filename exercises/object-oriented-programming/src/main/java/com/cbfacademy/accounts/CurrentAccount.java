@@ -4,9 +4,9 @@ public class CurrentAccount extends Account{
 
     private double overdraftAmount;
 
-    public CurrentAccount(int accountNumber, double overdraftAmount){
+    public CurrentAccount(int accountNumber){
         super(accountNumber);
-        this.overdraftAmount = overdraftAmount;
+        this.overdraftAmount = -500;
     }
 
     //withdrawal
