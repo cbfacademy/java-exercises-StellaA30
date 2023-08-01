@@ -3,23 +3,31 @@ package com.cbfacademy.cars;
 public class Car {
     String make;
     String model;
-    String year;
+    int year;
 
-    public Car(String make, String model, String year){
+    public Car(String make, String model, int year){
         this.make = make;
         this.model = model;
         this.year = year;
     }
 
     public String getMake() {
-        return make;
+        return this.make;
     }
 
     public String getModel() {
-        return model;
+        return this.model;
     }
 
-    public String getYear() {
+    public int getYear() {
         return year;
     }
+
+    @Override
+    public String toString(){
+        return make + " " + model + " (" + year + ")";
+    }
+
+
+
 }
