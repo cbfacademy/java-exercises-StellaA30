@@ -15,21 +15,16 @@ public class SavingsAccount extends Account {
         deposit(interest);
     }
 
-//
+// adding interest using override deposit method
     @Override
     public void deposit(double amount){
         if (amount > 0) {
-            double amountAndInterest = (amount * this.interestRate);
+            double amountAndInterest = amount + (amount * this.interestRate);
             setBalance(getBalance() + amountAndInterest);
-
         }
     }
 
 
-
-    public double getBalance() {
-        return super.getBalance();
-    }
 
     // getters and setters
     public double getInterestRate() {
