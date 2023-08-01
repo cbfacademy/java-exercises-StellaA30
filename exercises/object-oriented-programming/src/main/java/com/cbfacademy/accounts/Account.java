@@ -5,22 +5,23 @@ public class Account {
     private int accountNumber;
 
 
-    public Account(double balance, int accountNumber){
-        this.balance = balance;
+    public Account( int accountNumber){
+        this.balance = 0.0;
         this.accountNumber = accountNumber;
-
     }
 
     // withdrawal method
     public void withdraw(double amount){
-        if(amount - this.balance >=0){
+        if((amount > 0) && (amount <= this.balance)){
             this.balance -= amount;
         }
     }
 
     // deposit method
     public void deposit(double amount){
-        this.balance +=amount;
+        if (amount > 0) {
+            this.balance += amount;
+        }
     }
 
 
