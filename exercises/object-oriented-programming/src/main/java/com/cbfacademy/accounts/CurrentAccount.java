@@ -1,25 +1,30 @@
 package com.cbfacademy.accounts;
 
-public class CurrentAccount extends Account {
+public class CurrentAccount extends Account{
 
-    private double interestRate;
+    private double overdraftAmount;
 
-    public CurrentAccount( int accountNumber, double interestRate){
+    public CurrentAccount(int accountNumber, double overdraftAmount){
         super(accountNumber);
-        this.interestRate = interestRate;
+        this.overdraftAmount = overdraftAmount;
     }
 
-    public void addInterest(){
-        double interest = getBalance()*interestRate;
-        deposit(interest);
+    //withdrawal
+    @Override
+    public void withdraw(double amount){
+        if((amount > 0) && (getBalance() - amount >= this.overdraftAmount)){
+            double newBalance = getBalance() - amount;
+            setBalance(newBalance);
+        }
     }
 
-    // getters and setters
-    public double getInterestRate() {
-        return interestRate;
+
+    //getters and setters
+    public double getOverdraftAmount() {
+        return overdraftAmount;
     }
 
-    public void setInterestRate(double interestRate) {
-        this.interestRate = interestRate;
+    public void setOverdraftAmount(double overdraftAmount) {
+        this.overdraftAmount = overdraftAmount;
     }
 }
