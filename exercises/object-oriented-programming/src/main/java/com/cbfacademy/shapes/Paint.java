@@ -10,7 +10,7 @@ public class Paint {
 
     // TBC
     public double amount(Shape shape){
-        return shape.area()*coverage;
+        return shape.area()/coverage;
     }
 
 
