@@ -12,7 +12,17 @@ public class CollectionsExercises {
         //  - add 4 as the 3rd element of the list
         //  - invoke the method element() on the list and print the result on the screen
         //  - return the list
-        throw new RuntimeException("Not implemented");
+
+        LinkedList<Integer> integers = new LinkedList<>();
+        integers.add(4);
+        integers.addAll(1, Arrays.asList(5, 6, 8, 2, 9));
+        integers.addLast(2);
+        integers.add(2, 4);
+
+        //gets the head, i.e., the first element of the list
+        System.out.println(integers.element());
+
+        return integers;
     }
 
     public Stack<Integer> useStack() {
@@ -34,7 +44,15 @@ public class CollectionsExercises {
         //  - invoke the method poll() on the queue and print the result on the screen
         //  - invoke the element() method on the queue and print the result on the screen
         //  - return the queue
-        throw new RuntimeException("Not implemented");
+        ArrayDeque<Integer> integers = new ArrayDeque<>();
+        integers.addAll(Arrays.asList(5,6,8,9));
+        // use print instead of println to print everything on the same line,rather than print on new lines
+        System.out.print(integers.peekFirst());
+        System.out.print(integers.peekLast());
+        System.out.print(integers.poll());
+        System.out.print(integers.element());
+        return integers;
+
     }
 
     public HashMap<Integer, String> useHashMap() {
